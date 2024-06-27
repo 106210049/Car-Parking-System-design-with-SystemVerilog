@@ -59,7 +59,9 @@ module tb_parking_system;
 
         // Wait for system to process
         #20;
-        
+        sensor_entrance = 0;
+      	sensor_exit = 0;
+      	#20
         // Deactivate sensors
         sensor_entrance = 0;
       	sensor_exit = 1;
@@ -91,7 +93,9 @@ module tb_parking_system;
 
         // Wait for system to process
         #20;
-        
+        sensor_entrance = 0;
+        sensor_exit = 0;
+      	#20
         // Deactivate sensors
         sensor_entrance = 0;
       	sensor_exit = 1;
