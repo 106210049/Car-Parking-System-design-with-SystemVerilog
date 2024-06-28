@@ -156,16 +156,16 @@ module parking_system(
                 if (sensor_entrance == 1 && sensor_exit == 0) begin
                     system_next_state = WAIT_PASSWORD_IN;
                     next_signal.green_led = 0;
-                    next_signal.red_led = 0;
-                    next_signal.HEX_1 = 7'b1111111;
-                    next_signal.HEX_2 = 7'b1111111;
+                    next_signal.red_led = 1;
+                    next_signal.HEX_1 = 7'b0000110;	// E
+                    next_signal.HEX_2 = 7'b0101011;	// n
                 
                 end else begin
                     system_next_state = IDLE;
                     next_signal.green_led = 0;
                     next_signal.red_led = 0;
-                    next_signal.HEX_1 = 7'b1111111;
-                    next_signal.HEX_2 = 7'b1111111;
+                    next_signal.HEX_1 = 7'b1111111; // off
+                    next_signal.HEX_2 = 7'b1111111;	// off
                 end
             end
             
@@ -177,14 +177,14 @@ module parking_system(
                     system_next_state = RIGHT_PASSWORD_IN;
                     next_signal.green_led = 1;
                     next_signal.red_led = 0;
-                    next_signal.HEX_1 = 7'b0000010;
-                    next_signal.HEX_2 = 7'b1000000;
+                    next_signal.HEX_1 = 7'b0000010;	// 6
+                    next_signal.HEX_2 = 7'b1000000;	// 0
                 end else begin
                     system_next_state = WRONG_PASSWORD_IN;
                     next_signal.green_led = 0;
                     next_signal.red_led = 1;
-                    next_signal.HEX_1 = 7'b0000110;
-                    next_signal.HEX_2 = 7'b0000110;
+                    next_signal.HEX_1 = 7'b0000110;	// E
+                    next_signal.HEX_2 = 7'b0000110;	// E
                 end
             end
             
@@ -193,20 +193,20 @@ module parking_system(
                     system_next_state = STOP;
                     next_signal.green_led = 0;
                     next_signal.red_led = 1;
-                    next_signal.HEX_1 = 7'b0010010;
-                    next_signal.HEX_2 = 7'b0001100;
+                    next_signal.HEX_1 = 7'b0010010;	// 5
+                    next_signal.HEX_2 = 7'b0001100;	// P
                 end else if (sensor_exit == 1) begin
                     system_next_state = IDLE;
                     next_signal.green_led = 0;
                     next_signal.red_led = 0;
-                    next_signal.HEX_1 = 7'b1111111;
-                    next_signal.HEX_2 = 7'b1111111;
+                    next_signal.HEX_1 = 7'b1111111;	// off
+                    next_signal.HEX_2 = 7'b1111111; // off
                 end else begin
                     system_next_state = RIGHT_PASSWORD_IN;
                     next_signal.green_led = 1;
                     next_signal.red_led = 0;
-                    next_signal.HEX_1 = 7'b0000010;
-                    next_signal.HEX_2 = 7'b1000000;
+                    next_signal.HEX_1 = 7'b0000010;	// 6
+                    next_signal.HEX_2 = 7'b1000000;	// 0
                 end
             end
             
@@ -215,14 +215,14 @@ module parking_system(
                     system_next_state = RIGHT_PASSWORD_IN;
                     next_signal.green_led = 1;
                     next_signal.red_led = 0;
-                    next_signal.HEX_1 = 7'b0000010;
-                    next_signal.HEX_2 = 7'b1000000;
+                    next_signal.HEX_1 = 7'b0000010;	// 6
+                    next_signal.HEX_2 = 7'b1000000;	// 0
                 end else begin
                     system_next_state = WRONG_PASSWORD_IN;
                     next_signal.green_led = 0;
                     next_signal.red_led = 1;
-                    next_signal.HEX_1 = 7'b0000110;
-                    next_signal.HEX_2 = 7'b0000110;
+                    next_signal.HEX_1 = 7'b0000110;	// E
+                    next_signal.HEX_2 = 7'b0000110;	// E
                 end
             end
             
@@ -233,15 +233,15 @@ module parking_system(
               		system_next_state = RIGHT_PASSWORD_IN;
                     next_signal.green_led = 1;
                     next_signal.red_led = 0;
-                    next_signal.HEX_1 = 7'b0000010;
-                    next_signal.HEX_2 = 7'b1000000;
+                    next_signal.HEX_1 = 7'b0000010;	// 6
+                    next_signal.HEX_2 = 7'b1000000;	// 0
             end
             else	begin
               		system_next_state = STOP;
                     next_signal.green_led = 0;
                     next_signal.red_led = 1;
-                    next_signal.HEX_1 = 7'b0010010;
-                    next_signal.HEX_2 = 7'b0001100;
+                    next_signal.HEX_1 = 7'b0010010;	// 5
+                    next_signal.HEX_2 = 7'b0001100;	// P
             end
           end
         endcase
