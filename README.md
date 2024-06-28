@@ -92,7 +92,7 @@ If the current car is getting in the car park being detected by the exit sensor 
 
 ### FSM Synthesis block:
 
-<img src="Image/FSM_block.png" width="800" >  
+<img src="Image/FSM_Synthesis.png" width="800" >  
 
 ## Full code for Car Parking System:
 
