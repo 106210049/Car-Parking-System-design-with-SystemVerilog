@@ -378,3 +378,6 @@ endmodule
 
 ## Simulation:
 
+<img src="Image/EPWAVE.png" width="1000" >  
+
+My code in EDA Playground: [Car Parking System](https://edaplayground.com/x/f7zm)
